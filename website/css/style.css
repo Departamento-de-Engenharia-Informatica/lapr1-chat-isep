@@ -3,6 +3,11 @@
     font-family: 'Roboto', sans-serif;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
 /* VARIABLES */
 :root {
     /* COLOR */
@@ -23,10 +28,18 @@
     --isep: #991A23;
 
     /* FONT SIZES */
-    --font_size_title: 2rem;
-    --font_size_subtitle: 1.5rem;
-    --font_size_description: 1rem;
-    --font_size_small_description: 0.925rem;
+    --font_size_1: 0.25rem;    /* 4px */
+    --font_size_2: 0.5rem;     /* 8px */
+    --font_size_3: 0.75rem;    /* 12px */
+    --font_size_4: 1rem;       /* 16px */
+    --font_size_5: 1.25rem;    /* 20px */
+    --font_size_6: 1.5rem;     /* 24px */
+    --font_size_7: 1.75rem;    /* 28px */
+    --font_size_8: 2rem;       /* 32px */
+    --font_size_9: 2.25rem;    /* 36px */
+    --font_size_10: 3rem;      /* 48px */
+    --font_size_11: 3.75rem;   /* 60px */
+    --font_size_12: 4.5rem;    /* 72px */
 
     /* FONT WEIGHTS */
     --font_weight_title: 600;
@@ -78,6 +91,10 @@ header {
             text-decoration: none;
             color: var(--white);
             padding: var(--space_2) var(--space_5);
+
+            p {
+                font-size: var(--space_6);
+            }
         }
 
         a:hover {
@@ -85,4 +102,70 @@ header {
             color: var(--isep);
         }
     }
+}
+
+.section-2 {
+    display: grid;
+    min-height: 500px;
+    background-color: var(--isep);
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 150px 1fr;
+
+    h2 {
+        color: var(--white);
+        text-align: center;
+        text-transform: uppercase;
+        font-size: var(--font_size_10);
+        margin: var(--space_6) 0 0 0;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    
+    .section-2__features {
+        padding: 0 var(--space_9) var(--space_9) var(--space_9);
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        display: flex;
+        column-gap: var(--space_10);
+        
+        h3 {
+            font-size: var(--space_9);
+            color: var(--white);
+        }
+        
+        p {
+            font-size: var(--space_5);
+            color: var(--white);
+        }
+
+        img {
+            width: 100px;
+            fill: var(--white);
+        }
+        
+        .section-2__features__vertical-line {
+            width: 1px;
+            background-color: var(--white);
+        }
+        
+        .section-2__features__feature-1 {
+            width: 50%;
+            text-align: center;
+        }
+        
+        .section-2__features__feature-2 {
+            width: 50%;
+            text-align: center;
+        }
+    }
+
+    .section-2__img-1 {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+    }
+    
 }
