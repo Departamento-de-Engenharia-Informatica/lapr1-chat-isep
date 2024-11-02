@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* VARIABLES */
+:root {
+    /* COLOR */
+    --black:black;
+    --semi_transparent_black: #00000080;
+    --white: white;
+    --transparent: #ffffff00;
+    --gray_0: #f8f9fa;
+    --gray_1: #f1f3f5;
+    --gray_2: #e9ecef;
+    --gray_3: #dee2e6;
+    --gray_4: #ced4da;
+    --gray_5: #adb5bd;
+    --gray_6: #868e96;
+    --gray_7: #495057;
+    --gray_8: #343a40;
+    --gray_9: #212529;
+    --isep: #991A23;
+
+    /* FONT SIZES */
+    --font_size_title: 2rem;
+    --font_size_subtitle: 1.5rem;
+    --font_size_description: 1rem;
+    --font_size_small_description: 0.925rem;
+
+    /* FONT WEIGHTS */
+    --font_weight_title: 600;
+    --font_weight_subtitle: 600;
+    --font_weight_description: 400;
+    --font_weight_small_description: 300;
+
+    /* LINE HEIGHTS */
+    --line_height_title: 2.375rem;
+    --line_height_subtitle: 1.5rem;
+    --line_height_description: 1.25rem;
+    --line_height_small_description: 1rem;
+
+    --space_1: 0.25rem;    /* 4px */
+    --space_2: 0.5rem;     /* 8px */
+    --space_3: 0.75rem;    /* 12px */
+    --space_4: 1rem;       /* 16px */
+    --space_5: 1.25rem;    /* 20px */
+    --space_6: 1.5rem;     /* 24px */
+    --space_7: 1.75rem;    /* 28px */
+    --space_8: 2rem;       /* 32px */
+    --space_9: 2.25rem;    /* 36px */
+    --space_10: 3rem;      /* 48px */
+    --space_11: 3.75rem;   /* 60px */
+    --space_12: 4.5rem;    /* 72px */
+
+    /* MEDIA QUERIES */
+    --mobile_max_width: 425px;
+    --tablet_max_width: 768px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--space_10);
+    background-color: var(--isep);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+
+    h1 {
+        color: var(--white);
+        margin: var(--space_3) 0;
+    }
+
+    nav {
+        display: flex;
+        column-gap: var(--space_10);
+
+        a {
+            text-decoration: none;
+            color: var(--white);
+        }
+    }
+}
