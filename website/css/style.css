@@ -68,16 +68,21 @@ header {
 
     h1 {
         color: var(--white);
-        margin: var(--space_3) 0;
+        margin: var(--space_2) 0;
     }
 
     nav {
         display: flex;
-        column-gap: var(--space_10);
 
         a {
             text-decoration: none;
             color: var(--white);
+            padding: var(--space_2) var(--space_5);
+        }
+
+        a:hover {
+            background-color: var(--white);
+            color: var(--isep);
         }
     }
 }
