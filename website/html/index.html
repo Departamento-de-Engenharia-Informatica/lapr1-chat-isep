@@ -15,7 +15,7 @@
 </head>
 <body>
     <header>
-        <h1>ISEPChat</h1>
+        <a href="#"><h1>ISEPChat</h1></a>
         <nav>
             <a href=""><p class="roboto-medium">Home</p></a>
             <a href=""><p class="roboto-medium">Sobre nós</p></a>
@@ -23,55 +23,33 @@
         </nav>
     </header>
     <main>
-        <section>
-            <!-- Guilherme -->
-            <style>
-                section h1 {
-                    font-size: 35px;
-                    text-indent: 30px;
-                    color: #000000;
-                    margin-bottom: 15px;
-                    font-weight: bold;
-                    word-wrap: break-word;
-                }
-                section img {
-                    display: flex;
-                    max-width: 300px;
-                    height: auto;
-                    float: right;
-                    margin-left: 20px;
 
-                }
-                section h2 {
-                    font-size: 35px;
-                    margin-right: 70px;
-                    color: #000000;
-                    margin-bottom: 15px;
-                    margin-top: 50px;
-                    font-weight: bold;
-                    text-align: right;
-                    word-wrap: break-word;
-                }
-                section p {
-                    font-size: 18px;
-                    text-indent: 30px;
-                    padding-left: 30px;
-                    line-height: 1.5;
-                    color: #333333;
-                    margin-bottom: 10px;
-                }
-                .div2 {
-                    margin-top: 20px;
-                }
-            </style>
-            <div class="div1"> <h1><img src="/website/img/images.jpg" alt="Question Mark Icon">O que é o ISEP-Chat?</h1>
-                <p>O ISEP-Chat é um fórum destinado a alunos do Instituto Superior de Engenharia do Porto. Este consiste num local onde os estudantes possam comunicar entre si, quer seja para esclarecimento de dúvidas, marcação de eventos ou outros.</p></div>
-            <div class="div2"><h2>Qual é a sua necessidade?</h2>
-                <p>Atualmente, um dos problemas da comunidade académica é a dificuldade de arranjar alguém de um ano superior que seja capaz de nos esclarecer as dúvidas. Apesar da existência do sistema de mentoria, a marcação de sessões é confusa para alguns alunos. Sendo assim, o nosso grupo decidiu criar um lugar onde estes problemas possam ser resolvidos.</p>
-                <p>Existem, também, outros motivos para a criação desse projeto. Comunidades como a praxe ou até as turmas podem aproveitar este espaço para defenir horários, fazer comunicados, etc .</p></div>
+        <section class="section-1">
+            <div class="div-1"> 
+                <h2>O que é o ISEP-Chat?</h2>
+                <img src="/website/img/images.jpg" alt="Question Mark Icon">
+                <p>
+                    O ISEP-Chat é um fórum destinado a alunos do Instituto Superior de Engenharia do Porto.
+                    Este consiste num local onde os estudantes possam comunicar entre si, quer seja para
+                    esclarecimento de dúvidas, marcação de eventos ou outros.
+                </p>
+            </div>
+            <div class="div-2">
+                <h2>Qual é a sua necessidade?</h2>
+                <p>
+                    Atualmente, um dos problemas da comunidade académica é a dificuldade de arranjar alguém de 
+                    um ano superior que seja capaz de nos esclarecer as dúvidas. Apesar da existência do sistema 
+                    de mentoria, a marcação de sessões é confusa para alguns alunos. Sendo assim, o nosso grupo 
+                    decidiu criar um lugar onde estes problemas possam ser resolvidos.
+                </p>
+                <p>
+                    Existem, também, outros motivos para a criação desse projeto. Comunidades como a praxe ou até 
+                    as turmas podem aproveitar este espaço para defenir horários, fazer comunicados, etc.
+                </p>
+            </div>
         </section>
+
         <section class="section-2">
-            <!-- Leonardo -->
             <h2>Funcionalidades</h2>
             <div class="section-2__features">
                 <div class="section-2__features__feature-1">
@@ -96,44 +74,126 @@
             </div>
             <img class="section-2__img-1" src="../img/group_of_young_students.png" alt="Grupo de estudantes">
         </section>
-        <section>
-            <!-- Hugo -->
-            <style>
-                section h1 {
-                    font-size: 90px;
-                    text-indent: 30px;
-                    word-wrap: break-word;
-                }
-                section p {
-                    display: flex;
-                    font-size: 25px;
-                    text-indent: 30px;
-                    padding-left: 30px;
-                    word-wrap: break-word;
-                }
-                section img{
-                    display: flex;
-                    max-width: 600px;
-                    height: auto;
-                    float: right;
-                    margin-left: 30px;
-                    margin-right: 40px;
-                    box-shadow: 5px 5px 15px rgba(0,0,0,0.7);
-                    border-radius: 5px;
-                }
-                </style>
-            <h1>Sobre nós</h1>
-            <img src="../img/grlapr.jpg" alt="foto do grupo" >
-            <p>Olá, eu sou o responsável pelo design deste site e vou agora contar um pouco sobre a nossa equipa.</p>
-            <p>Nós somos um grupo de quatro alunos do primeiro ano de engenharia informática e este projeto é um dos trabalhos que nos foi dado na disciplina LAPR1.</p>
-            <p>Quando nos foi dada a liberdade de escolher um tema, decidimos que o melhor a fazer era procurar por problemas dentro da nossa comunidade do ISEP.</p>
-            <p>Após uma breve discussão, apercebemo-nos que nós não tivemos muitas oportunidades para conversar com pessoas de anos acima que nos pudessem tirar as dúvidas. Aproveitando o design de fórum, surgiu, simultaneamente, a ideia de criar um espaço onde os grupos da nossa comunidade pudessem anunciar atividades ou planejar encontros.</p>
-            <p>Espero que tenha gostado de ouvir os nossos planos para o futuro deste projeto.</p>
+
+        <section class="section-3">
+            <h2>Sobre nós</h2>
+            <img src="../img/grlapr_cutted.jpg" alt="Foto dos desenvolvedores do ISEPChat" >
+            <div class="section-3__text-box">
+                <p>Equipa de desenvolvimento:</p>
+                <ul>
+                    <li>Leonardo Coelho (1240973@isep.ipp.pt)</li>
+                    <li>Vasco Moutinho (1240980@isep.ipp.pt)</li>
+                    <li>Guilherme Silva (1241000@isep.ipp.pt)</li>
+                    <li>Hugo Correia (1241480@isep.ipp.pt)</li>
+                </ul>
+                <p class="roboto-regular-italic">
+                    "Olá! eu sou o responsável pelo design deste site, me chamo Vasco Moutinho, e vou agora contar um 
+                    pouco sobre a nossa equipa. Nós somos um grupo de quatro alunos do primeiro ano de engenharia informática 
+                    e este projeto é um dos trabalhos que nos foi dado na disciplina LAPR1. Quando nos foi dada a liberdade 
+                    de escolher um tema, decidimos que o melhor a fazer era procurar por problemas dentro da nossa comunidade 
+                    do ISEP. Após uma breve discussão, apercebemo-nos que nós não tivemos muitas oportunidades para conversar 
+                    com pessoas de anos acima que nos pudessem tirar as dúvidas. Aproveitando o design de fórum, surgiu, 
+                    simultaneamente, a ideia de criar um espaço onde os grupos da nossa comunidade pudessem anunciar 
+                    atividades ou planejar encontros. Espero que tenha gostado de ouvir os nossos planos para o futuro
+                    deste projeto!""
+                </p>
+            </div>
+        </section>
+
+        <section class="section-form">
+            <!-- <form class="section-form__form" id="messageForm">
+                <h1 class="section-form__title">Form Title</h1>
+                <label class="section-form__form__label">
+                    Preencha o formulário:
+                </label>
+                <input 
+                    type="text"
+                    name="fullName"
+                    id="fullName"
+                    placeholder="Primeiro e último nome"
+                    required
+                />
+                <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Endereço de email"
+                    required
+                />
+                <input
+                    type="text"
+                    name="subject"
+                    id="subject"
+                    placeholder="Assunto"
+                    required
+                />
+                <textarea
+                    name="message"
+                    id="message"
+                    placeholder="Digite sua mensagem..."
+                    required
+                ></textarea>
+                <button type="submit" class="btn--style-1">Enviar</button>
+            </form> -->
+        
+            <h1>Contacte-nos!</h1>
+            <form class="contact-form" action="#" method="POST">
+                <label class="roboto-bold" for="name">Nome:</label>
+                <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                
+                <label class="roboto-bold" for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Seu email" required>
+                
+                <label class="roboto-bold" for="topic">Assunto:</label>
+                <input type="text" id="topic" name="topic" placeholder="Assunto do seu contacto" required>
+                
+                <label class="roboto-bold" for="message">Mensagem:</label>
+                <textarea id="message" name="message" placeholder="Sua mensagem" rows="5" required></textarea>
+                
+                <button type="submit" class="submit-btn roboto-medium">Enviar</button>
+            </form>
         </section>
     </main>
+    
     <footer>
-
+        <div class="footer__div-1">
+            <div class="footer__div-1__social-medias">
+                <a href="."><img class="footer__div-1__social-medias__social-media-icon" id="facebook-icon" src="../img/ic-facebook-alt-btn.svg" alt="Ícone do Facebook"></a>
+                <a href="."><img class="footer__div-1__social-medias__social-media-icon" id="linkedIn-icon" src="../img/ic-linked-in-alt-btn.svg" alt="Ícone do LinkedIn"></a>
+                <a href="."><img class="footer__div-1__social-medias__social-media-icon" id="instagram-icon" src="../img/ic-instagram-alt-btn.svg" alt="Ícone do Instagram"></a>
+                <a href="."><img class="footer__div-1__social-medias__social-media-icon" id="twitter-icon" src="../img/ic-x-twitter-alt-btn.svg" alt="Ícone do Twitter"></a>
+                <a href="."><img class="footer__div-1__social-medias__social-media-icon" id="discord-icon" src="../img/ic-discord-alt-btn.svg" alt="Ícone do Discord"></a>
+            </div>
+            <div class="footer__div-1__navigation-map">
+                <ul>
+                    <li class="roboto-bold">ISEPChat</li>
+                    <li><a href=".">Home</a></li>
+                    <li><a href=".">Sobre nós</a></li>
+                    <li><a href=".">Contacto</a></li>
+                    <li><a href=".">Contacte-nos</a></li>
+                </ul>
+                <ul>
+                    <li class="roboto-bold">Utilizador</li>
+                    <li><a href=".">Iniciar sessão</a></li>
+                    <li><a href=".">Termos & Condições</a></li>
+                    <li><a href=".">Privacidade</a></li>
+                    <li><a href=".">Cookies</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__div-2">
+            <div class="footer__div-2__logos-container">
+                <h1>ISEPChat</h1>
+                <img src="../img/isep.png" alt="Logo do ISEP">
+            </div>
+            <div class="footer__div-2__copyright-text">
+                <p>Copyright © 2024 Leonardo Coelho, Vasco Moutinho, Guilherme Silva, Hugo Correia</p>
+                <p>Todos os direitos reservados</p>
+            </div>
+            <img class="footer__div-2__copyright-img" src="../img/cc_by-nc-nd.svg.png" alt="Creative Commons: BY/NC/ND">
+        </div>
     </footer>
+
     <script src="../js/script.js"></script>
 </body>
 </html>
