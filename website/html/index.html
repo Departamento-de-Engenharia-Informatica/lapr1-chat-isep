@@ -15,6 +15,10 @@
 </head>
 
 <style>
+/***********************************************************************/
+/**************************   normalize.css   **************************/
+/***********************************************************************/
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -365,6 +369,10 @@ template {
   display: none;
 }
 
+/******************************************************************/
+/**************************   font.css   **************************/
+/******************************************************************/
+
 .roboto-thin {
     font-family: "Roboto", sans-serif;
     font-weight: 100;
@@ -436,6 +444,10 @@ template {
     font-weight: 900;
     font-style: italic;
 }
+
+/*******************************************************************/
+/**************************   style.css   **************************/
+/*******************************************************************/
 
 * {
     box-sizing: border-box;
@@ -1149,7 +1161,7 @@ footer {
 
         <section class="section-form">
             <h1>Contacte-nos!</h1>
-            <form class="contact-form" action="#" method="POST">
+            <form class="contact-form" onsubmit="submitForm(event)">
                 <label class="roboto-bold" for="name">Nome:</label>
                 <input type="text" id="name" name="name" placeholder="Seu nome" required>
                 
@@ -1206,26 +1218,59 @@ footer {
         </div>
     </footer>
 
-    <!-- Firebase config -->
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js"></script>
     <script type="module">
-        // Import the functions you need from the SDKs you need
+        import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
+
+        // Firebase configuration
         const firebaseConfig = {
             apiKey: "AIzaSyDIJX5VkIIkQXjAymM9_X721jZ5ce5Lw6c",
             authDomain: "isepchat.firebaseapp.com",
+            databaseURL: "https://isepchat-default-rtdb.europe-west1.firebasedatabase.app",
             projectId: "isepchat",
-            storageBucket: "isepchat.firebasestorage.app",
+            storageBucket: "isepchat.appspot.com",
             messagingSenderId: "715861516084",
             appId: "1:715861516084:web:a4c8e3aa11385a4e8ecf61"
         };
-      
+
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        // Submit Form Function
+        window.submitForm = function(event) {
+            event.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const topic = document.getElementById('topic').value;
+            const message = document.getElementById('message').value;
+            const timeOfMessage = new Date().toISOString();
+
+            // Data to push
+            const newMessage = {
+                name,
+                email,
+                topic,
+                message,
+                timeOfMessage
+            };
+
+            // Push to Firebase Realtime Database
+            const messagesRef = ref(database, 'websiteMessages');
+            push(messagesRef, newMessage)
+                .then(() => {
+                    alert("Mensagem enviada com sucesso!");
+                    document.querySelector('.contact-form').reset();
+                })
+                .catch((error) => {
+                    console.error("Erro ao enviar mensagem: ", error);
+                    alert("Erro ao enviar a mensagem. Tente novamente.");
+                });
+        };
     </script>
-    <script src="../js/script.js"></script>
 </body>
 </html>
