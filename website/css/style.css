@@ -464,6 +464,10 @@ footer {
 
         nav {
            column-gap: var(--space_6); 
+           
+           a {
+            text-align: center;
+           }
         }
     }
 
