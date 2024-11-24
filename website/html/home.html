@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISEPChat - Home</title>
+</head>
+<body>
+    <button id="join-chat-btn">Find/Enter Chat</button>
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js"></script>
+    <script type="module">
+        // Firebase configuration and initialization
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+        import { getDatabase, ref, push, onValue, set, update } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDIJX5VkIIkQXjAymM9_X721jZ5ce5Lw6c",
+            authDomain: "isepchat.firebaseapp.com",
+            databaseURL: "https://isepchat-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "isepchat",
+            storageBucket: "isepchat.appspot.com",
+            messagingSenderId: "715861516084",
+            appId: "1:715861516084:web:a4c8e3aa11385a4e8ecf61"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        const userId = localStorage.getItem("userId") || crypto.randomUUID();
+        localStorage.setItem("userId", userId);
+
+        function joinOrCreateChat() {
+            const usersRef = ref(database, "users");
+            const chatsRef = ref(database, "chats");
+
+            set(ref(database, `users/${userId}`), { id: userId });
+
+            onValue(chatsRef, (snapshot) => {
+                const chats = snapshot.val();
+                let joinedChat = false;
+                let chatId = null;
+
+                if (chats) {
+                    Object.keys(chats).forEach((currentChatId) => {
+                        const chat = chats[currentChatId];
+                        if (!chat.user2 && chat.user1 !== userId && !joinedChat) {
+                            update(ref(database, `chats/${currentChatId}`), { user2: userId });
+                            joinedChat = true;
+                            chatId = currentChatId;
+                        }
+                    });
+                }
+
+                if (!joinedChat) {
+                    const newChatRef = push(chatsRef);
+                    set(newChatRef, {
+                        id: newChatRef.key,
+                        user1: userId,
+                        user2: null,
+                        hasAUserLeft: false,
+                    });
+                    chatId = newChatRef.key;
+                }
+
+                if (chatId) {
+                    window.location.href = `chat.html?chatId=${chatId}`;
+                }
+            }, { onlyOnce: true });
+        }
+
+        document.getElementById("join-chat-btn").addEventListener("click", joinOrCreateChat);
+    </script>
+    </script>
+</body>
+</html>
