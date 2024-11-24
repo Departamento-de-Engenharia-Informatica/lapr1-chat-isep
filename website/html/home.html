@@ -4,9 +4,225 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ISEPChat - Home</title>
+
+    <style>
+        :root {
+        /* COLOR */
+        --black:black;
+        --semi_transparent_black: #00000080;
+        --white: white;
+        --transparent: #ffffff00;
+        --gray_0: #f8f9fa;
+        --gray_1: #f1f3f5;
+        --gray_2: #e9ecef;
+        --gray_3: #dee2e6;
+        --gray_4: #ced4da;
+        --gray_5: #adb5bd;
+        --gray_6: #868e96;
+        --gray_7: #495057;
+        --gray_8: #343a40;
+        --gray_9: #212529;
+        --pressed_btn: #0056b3;
+        --isep: #CD3535;
+        }
+        body {
+                margin: 0;
+                font-family: Arial, sans-serif;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            header {
+                background-color: var(--isep);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                height: 150px;
+                padding: 0 20px;
+            }
+        img{
+            height: 100px;
+        }
+        h1{
+            
+            font-size: 48px;
+                color: var(--black);
+                text-align: center;  
+        }
+        .container {
+                font-size: 40px;
+                padding: 20px;
+                text-align: center;
+                width: 500px;
+        
+            select, button {
+                width: 100%;
+                padding: 20px;
+                margin: 20px 0;
+                background-color: var(--gray_4);
+                border: 1px solid var(--gray_9);
+                border-radius: 10px;
+                font-size: 40px;
+            }
+            button {
+                background-color: var(--gray_4);
+                color: rgb(0, 0, 0);
+                cursor: pointer;
+            }
+            button:hover {
+                background-color: var(--gray_6);
+            }
+        }
+        
+        footer {
+        height: fit-content;
+        width: 100%;
+    
+        .footer__div-1 {
+            background-color: var(--gray_2);
+            display: flex;
+            flex-direction: column;
+            row-gap: var(--space_12);
+            padding: var(--space_12) var(--space_6);
+    
+            .footer__div-1__social-medias {
+                align-self: center;
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+                max-width: 1000px;
+    
+                .footer__div-1__social-medias__social-media-icon {
+                    height: 50px;
+                }
+            }
+    
+            .footer__div-1__navigation-map {
+                display: flex;
+                column-gap: var(--space_8);
+    
+                ul {
+                    margin: var(--space_4) 0;
+                    list-style-type: none;
+    
+                    li:first-child {
+                        margin-bottom: var(--space_3);
+                    }
+    
+                    li {
+                        margin-bottom: var(--space_1);
+                        font-size: var(--font_size_6);
+                        
+                        a {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+    
+            .footer__div-1__btn-container {
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+                a img {
+                    height: auto;
+                    width: calc(50vw - var(--space_3));
+                    max-width: 200px;
+                }        
+            }
+        }
+    
+        .footer__div-2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--gray_3);       
+            row-gap: var(--space_4);
+    
+            .footer__div-2__logos-container {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                width: 100%;
+    
+                h1 {
+                    font-size: var(--font_size_10);
+                }
+    
+                img {
+                    object-fit: scale-down;
+                    height: auto;
+                    width: 40%;
+                    max-width: 200px;
+                    height: fit-content;
+                }
+            }
+        }
+    }
+    
+    
+    </style>
+
 </head>
 <body>
     <button id="join-chat-btn">Find/Enter Chat</button>
+    <header>
+        <div></div>
+        <img src="img/ISEP-Chat Logo.png" alt="ISEP-Chat Logo">
+    </header>
+    <div class="container">
+        <h1>Bem vindo ao ISEP-Chat!</h1>
+        <label for="year">Em que ano estás?</label>
+        <select id="year">
+            <option value="1">1º Ano Licenciatura</option>
+            <option value="2">2º Ano Licenciatura</option>
+            <option value="3">3º Ano Licenciatura</option>
+        </select>
+
+        <label for="conversation">Com quem é que desejas conversar?</label>
+        <select id="conversation">
+            <option value="superiores">Anos Superiores</option>
+            <option value="tutores">Tutores</option>
+        </select>
+
+        <button>Começar a Procura!</button>
+    </div>
+
+
+    <footer>
+        <div class="footer__div-1">
+            <div class="footer__div-1__social-medias">
+                <a href="."><img class="footer__div-1__social-medias__social-media-icon" id="facebook-icon" src="img/ic-facebook-alt-btn.svg" alt="Ícone do Facebook"></a>
+                <a href="."><img class="footer__div-1__social-medias__social-media-icon" id="linkedIn-icon" src="img/ic-linked-in-alt-btn.svg" alt="Ícone do LinkedIn"></a>
+                <a href="."><img class="footer__div-1__social-medias__social-media-icon" id="instagram-icon" src="img/ic-instagram-alt-btn.svg" alt="Ícone do Instagram"></a>
+                <a href="."><img class="footer__div-1__social-medias__social-media-icon" id="twitter-icon" src="img/ic-x-twitter-alt-btn.svg" alt="Ícone do Twitter"></a>
+                <a href="."><img class="footer__div-1__social-medias__social-media-icon" id="discord-icon" src="img/ic-discord-alt-btn.svg" alt="Ícone do Discord"></a>
+            </div>
+            <div class="footer__div-1__navigation-map">
+                <ul>
+                    <li class="roboto-bold">Utilizador</li>
+                    <li><a href=".">Iniciar sessão</a></li>
+                    <li><a href=".">Termos & Condições</a></li>
+                    <li><a href=".">Privacidade</a></li>
+                    <li><a href=".">Cookies</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__div-2">
+            <div class="footer__div-2__logos-container">
+                <h1>ISEPChat</h1>
+                <img src="img/isep.png" alt="Logo do ISEP">
+            </div>
+            <div class="footer__div-2__copyright-text">
+                <p>Copyright © 2024 Leonardo Coelho, Vasco Moutinho, Guilherme Silva, Hugo Correia</p>
+                <p>Todos os direitos reservados</p>
+            </div>
+            <img class="footer__div-2__copyright-img" src="img/cc_by-nc-nd.svg.png" alt="Creative Commons: BY/NC/ND">
+        </div>
+    </footer>
     <!-- Firebase SDKs -->
     <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js"></script>
     <script type="module">
